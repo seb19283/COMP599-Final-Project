@@ -9,7 +9,15 @@ def main():
 
     with open(f"{args.input_file}", 'r') as f:
         json_file = json.load(f)
-        print(len(json_file))
+        count = 0
+        for line in json_file:
+            line = json_file[line]
+            if(line['positive_ctxs'] == []):
+                continue
+
+            count += 1
+
+        print(count)
 
 if __name__ == '__main__':
     main()
