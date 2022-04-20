@@ -7,6 +7,8 @@ from torch import nn
 from corpora import Corpora
 from repository import DataRepo
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
+
 class CustomDPRRetriever(nn.Module):
     def __init__(
         self,

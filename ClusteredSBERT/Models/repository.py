@@ -2,8 +2,11 @@ from collections import defaultdict
 import json
 import csv
 import time
+import torch
 from torch import Tensor as T
 from torch.utils.data import Dataset
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
 
 class EmbDataset(Dataset):    
     def __init__(self, docs):

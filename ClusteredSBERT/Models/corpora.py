@@ -8,6 +8,8 @@ from tqdm.auto import tqdm
 from sklearn.cluster import MiniBatchKMeans
 from repository import EmbDataset
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
+
 class Corpora():
     def __init__(
         self,

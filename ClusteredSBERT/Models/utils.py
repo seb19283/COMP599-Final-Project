@@ -2,9 +2,12 @@ from collections import defaultdict
 import re
 import string
 import math
+import torch
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
 from repository import EmbCtxDataset, EmbDataset
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
 
 class Evaluator():
     def remove_articles(self, text):
